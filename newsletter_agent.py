@@ -49,7 +49,7 @@ def get_newsletter_emails(service, days=1, max_results=50):
     # Calculate date for query
     date_threshold = (datetime.utcnow() - timedelta(days=days)).strftime('%Y/%m/%d')
     # Query for emails with "newsletters" label or matching newsletter patterns
-    query = f'label:newsletters after:{date_threshold}'
+    query = f'label:ai-newsletter after:{date_threshold}'
     try:
         results = service.users().messages().list(
             userId='me',
